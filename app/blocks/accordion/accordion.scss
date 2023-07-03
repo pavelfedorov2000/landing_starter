@@ -1,0 +1,89 @@
+ol.accordion-block {
+    counter-reset: accordion;
+}
+
+.accordion-item {
+    $this: &;
+
+    border-bottom: var(--border-gray);
+
+    &:not(:first-child) {
+        padding-top: var(--offset-xxs);
+    }
+
+    &:not(:last-child) {
+        padding-bottom: var(--offset-xxs);
+    }
+    // .accordion-item__toggle
+
+    &__toggle {
+        position: relative;
+        padding-left: var(--offset-xl);
+        width: 100%;
+        text-align: left;
+        @include padding-y(var(--offset-xxs));
+        @include flex-center-y;
+        gap: var(--offset-s);
+
+        &-text {
+            flex-grow: 1;
+            font-size: rem(20);
+            font-weight: 600;
+            line-height: 1.6;
+            letter-spacing: 0.4px;
+            text-transform: uppercase;
+        }
+
+        &-arrow {
+            width: var(--icon-size_l);
+            height: var(--icon-size_l);
+            fill: var(--gray-c2);
+            transition: var(--transition) transform;
+        }
+
+        &::before {
+            content: '0'counter(accordion);
+            counter-increment: accordion;
+            position: absolute;
+            top: var(--offset-xs);
+            left: 0;
+            font-size: rem(20);
+            letter-spacing: 0.4px;
+            color: var(--gray-62);
+            transition: var(--transition) color;
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                &::before {
+                    color: var(--gray-c2);
+                }
+            }
+        }
+
+        &[aria-expanded="true"] {
+            //margin-bottom: var(--offset-xxs);
+
+            #{$this} {
+                &__toggle {
+                    &::before {
+                        color: var(--gray-c2);
+                    }
+
+                    &-arrow {
+                        transform: rotate(180deg);
+                    }
+                }
+            }
+        }
+    }
+
+    // .accordion-item__content
+
+    &__content {
+        padding-left: var(--offset-xl);
+        max-height: 0;
+        overflow: hidden;
+        transition: var(--transition) max-height;
+    }
+}

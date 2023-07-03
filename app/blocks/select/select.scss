@@ -1,0 +1,91 @@
+.select {
+	$this: &;
+
+	position: relative;
+
+	&__toggle {
+		@include flex-center-between;
+		cursor: pointer;
+        text-align: left;
+        color: var(--gray-c2);
+        transition: var(--transition) border-color, var(--transition) color;
+
+		&-arrow {
+            fill: var(--white);
+			transition: var(--transition) transform;
+		}
+
+		&[aria-expanded="true"] {
+            color: var(--white);
+            border-color: var(--white);
+
+            #{$this} {
+                &__toggle-arrow {
+                    transform: rotate(180deg);
+                }
+            }
+
+			&~#{$this} {
+				&__dropdown {
+					@include show();
+				}
+			}
+		}
+
+        @media (any-hover: hover) {
+            &:hover {
+                color: var(--white);
+                border-color: var(--white);
+            }
+        }
+	}
+
+	&__dropdown {
+		position: absolute;
+		left: 0;
+		right: 0;
+		transition: var(--transition) all;
+		z-index: 25;
+		@include hide();
+	}
+
+    &__content {
+        padding: var(--offset-xxs) var(--offset-s);
+        background-color: var(--dark);
+        border-right: var(--border);
+        border-bottom: var(--border);
+        border-left: var(--border);
+    }
+
+	&__input {
+		display: none;
+
+		&:checked+label {
+            //color: var(--blue);
+        }
+	}
+
+	&__label {
+        @include padding-y(var(--offset-xs));
+		@include flex-center-y;
+		width: 100%;
+		cursor: pointer;
+        color: var(--gray-ed);
+        font-size: rem(16);
+		overflow: hidden;
+        transition: var(--transition) color;
+
+        @include media('1024', max) {
+            font-size: rem(14);
+        }
+
+        @include media('500', max) {
+            @include padding-y(var(--offset-xxs));
+            font-size: rem(12);
+        }
+
+        &:not(:last-child) {
+            border-bottom: var(--border-gray);
+        }
+	}
+}

@@ -1,0 +1,18 @@
+.popup {
+    &__close {
+        padding: var(--offset-xxs);
+
+        &-icon {
+            --size: var(--icon-size_l);
+
+            @include media('500', max) {
+                --size: var(--icon-size);
+            }
+
+            display: block;
+            width: var(--size);
+            height: var(--size);
+            fill: var(--white);
+        }
+    }
+}

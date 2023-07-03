@@ -1,0 +1,15 @@
+.menu {
+    $this: &; // .menu
+
+    &__list {
+        display: flex;
+    }
+
+    &__link {
+        @media (any-hover: hover) {
+            &:hover {
+                
+            }
+        }
+    }
+}

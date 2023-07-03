@@ -1,0 +1,27 @@
+<li class="accordion-item">
+    <h3 class="accordion-item__heading">
+        <button class="btn accordion-item__toggle"
+                type="button"
+                id="@@id"
+                aria-controls="@@controls"
+                aria-expanded="@@if(context.isExpanded){true}@@if(!context.isExpanded){false}">
+            <span class="accordion-item__toggle-text">@@title</span>
+            @@include('blocks/icons/drop-arrow.html', {
+                "class": "accordion-item__toggle-arrow"
+            })
+        </button>
+    </h3>
+    <div class="accordion-item__content text-content"
+         id="@@controls"
+         aria-labelledby="@@id">
+        @@if(context.text1){
+            <p>@@text1</p>
+        }
+        @@if(context.text2){
+            <p>@@text2</p>
+        }
+        @@if(context.text3){
+            <p>@@text3</p>
+        }
+    </div>
+</li>

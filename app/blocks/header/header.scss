@@ -1,0 +1,5 @@
+.header {
+    &__inner {
+        @include flex-center-between;
+    }
+}

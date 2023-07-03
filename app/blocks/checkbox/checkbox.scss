@@ -1,0 +1,66 @@
+.checkbox {
+    $this: &;
+
+    cursor: pointer;
+    position: relative;
+    padding-bottom: var(--offset-l);
+    @include flex-center-y;
+
+    @include media('500', max) {
+        padding-bottom: var(--offset-m);
+    }
+
+    &__input {
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        position: absolute;
+        clip: rect(0 0 0 0);
+
+        &:checked ~ #{$this} {
+            &__style {
+                &:before {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    &__style {
+        position: relative;
+        margin-right: var(--offset-s);
+        flex-shrink: 0;
+        width: var(--icon-size);
+        height: var(--icon-size);
+        border: var(--border);
+
+        &:before {
+            content: '';
+            @include position-center-xy;
+            width: rem(11);
+            height: rem(10);
+            background-image: url(../images/icons/check.svg);
+            @include bg(contain);
+            opacity: 0;
+            transition: var(--transition) opacity;
+        }
+    }
+
+    &__text {
+        font-size: rem(16);
+
+        @include media('1024', max) {
+            font-size: rem(14);
+        }
+
+        @include media('500', max) {
+            font-size: rem(12);
+        }
+    }
+
+    .pristine-error {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+}

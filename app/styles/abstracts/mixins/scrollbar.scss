@@ -1,0 +1,13 @@
+@mixin scrollbar($scroll-width, $bg, $thumb-bg) {
+	overflow-y: auto;
+
+	&::-webkit-scrollbar {
+		width: $scroll-width;
+        background-color: $bg;
+	}
+
+	&::-webkit-scrollbar-thumb {
+        width: $scroll-width;
+		background-color: $thumb-bg;
+	}
+}

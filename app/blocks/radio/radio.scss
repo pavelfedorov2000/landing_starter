@@ -1,0 +1,53 @@
+.radiobutton {
+    $this: &;
+
+    cursor: pointer;
+    @include padding-y(var(--offset-xxs));
+    @include flex-center-y;
+
+    &__input {
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        position: absolute;
+        clip: rect(0 0 0 0);
+
+        &:checked ~ #{$this} {
+            &__style {
+                &:before {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    &__style {
+        position: relative;
+        margin-right: var(--offset-s);
+        flex-shrink: 0;
+        @include round(var(--icon-size));
+        border: var(--border);
+
+        &:before {
+            content: '';
+            @include position-center-xy;
+            @include round(rem(8));
+            background-color: var(--white);
+            opacity: 0;
+            transition: var(--transition) opacity;
+        }
+    }
+
+    &__text {
+        font-size: rem(16);
+        transition: var(--transition) color;
+
+        @include media('1024', max) {
+            font-size: rem(14);
+        }
+
+        @include media('500', max) {
+            font-size: rem(12);
+        }
+    }
+}

@@ -1,0 +1,39 @@
+.title-container {
+    padding-bottom: var(--offset-l);
+    @include flex-center-between;
+    flex-wrap: wrap;
+
+    &--offset {
+        &_m {
+            padding-bottom: var(--offset-m);
+        }
+
+        &_xl {
+            padding-bottom: var(--offset-xl);
+
+            @include media('1024', max) {
+                padding-bottom: var(--offset-l);
+            }
+
+            @include media('767', max) {
+                padding-bottom: var(--offset-m);
+            }
+
+            @include media('500', max) {
+                padding-bottom: var(--offset-s);
+            }
+        }
+
+        &_xlxs {
+            padding-bottom: var(--offset-xlxs);
+
+            @include media('1024', max) {
+                padding-bottom: var(--offset-xl);
+            }
+
+            @include media('500', max) {
+                padding-bottom: var(--offset-l);
+            }
+        }
+    }
+}

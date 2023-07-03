@@ -1,0 +1,23 @@
+.social {
+	$this: &;
+
+	display: flex;
+    gap: var(--offset-m);
+
+    &__link {
+        @include flex-center;
+        @include padding-y(var(--offset-xxs));
+
+        @media (any-hover: hover) {
+            &:hover {
+                #{$this}__icon {
+                    fill: var(--gray-c2);
+                }
+            }
+        }
+    }
+
+    &__icon {
+        fill: currentColor;
+    }
+}

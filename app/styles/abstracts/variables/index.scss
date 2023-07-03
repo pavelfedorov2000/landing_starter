@@ -1,0 +1,81 @@
+:root {
+	--color-white-rgb: 255, 255, 255;
+	--white: rgb(var(--color-white-rgb));
+	--black: #070A12;
+    --dark: #101218;
+    --blue: #142040;
+    --primary: #303d61;
+    --error: #FF6F6F;
+
+	--header-height: #{rem(98)};
+
+	// offsets (gaps)
+	--offset-xxxl: #{rem(80)};
+	--offset-xxl: #{rem(64)};
+    --offset-xxls: #{rem(60)};
+    --offset-xlxs: #{rem(56)};
+    --offset-xls: #{rem(48)};
+	--offset-xl: #{rem(40)};
+	--offset-l: #{rem(32)};
+	--offset-m: #{rem(24)};
+    --offset-sm: #{rem(20)};
+	--offset-s: #{rem(16)};
+	--offset-xs: #{rem(12)};
+	--offset-xxs: #{rem(8)};
+	--offset-xxxs: #{rem(4)};
+
+    --gap: var(--offset-m);
+
+    --container-width: #{rem(1200)};
+	--container-padding: var(--offset-s);
+    --container-width-header: #{rem(1358)};
+
+    --section-padding: var(--offset-xxl);
+    --section-padding_xl: var(--offset-xxxl);
+    --section-padding_xxl: #{rem(120)};
+
+    --space-paragraph: var(--offset-xxs);
+    --space-paragraph_s: var(--offset-s);
+    --title-offset: var(--offset-l);
+
+    --icon-size_s: #{rem(16)};
+    --icon-size_sm: #{rem(20)};
+    --icon-size: #{rem(24)};
+    --icon-size_l: #{rem(32)};
+
+    /* @include media('1024', max) {
+        --container-padding: var(--offset-xxls);
+        --header-height: var(--offset-xxl);
+        --gap: var(--offset-s);
+        --section-padding_xl: var(--offset-xl);
+        --section-padding_xxl: var(--offset-xxl);
+    }
+
+    @include media('767', max) {
+        --container-padding: var(--offset-s);
+        --header-height: var(--offset-xlxs);
+    }
+
+    @include media('500', max) {
+        --section-padding_xl: var(--offset-m);
+        --section-padding_xxl: var(--offset-l);
+    } */
+
+	--base-font-size: 16;
+	--main-font: 'Lato', sans-serif;
+    --second-font: 'Oswald', sans-serif;
+	--color-default: var(--gray-ed);
+
+	--transition-timing: cubic-bezier(0.4, 0, 0.2, 1);
+	--duration300ms: 0.3s;
+	--duration500ms: 0.5s;
+	--delay: var(--duration300ms);
+	--transition: var(--duration300ms) var(--transition-timing);
+	--transition-long: var(--duration500mss) var(--transition-timing);
+
+    --border-width: 1px;
+    --border-style: solid;
+	--border: var(--border-width) var(--border-style) var(--white);
+    --border-gray: var(--border-width) var(--border-style) var(--gray-62);
+	--shadow: 0 10px 30px 15px rgba(7, 10, 18, 0.25);
+}

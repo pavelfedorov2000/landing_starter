@@ -1,11 +1,11 @@
-# Imedia Project Template Frontend (v2.0.0)
+# Landing page gulpfile include starter
 **Шаблон проекта для быстрого старта**
 
 ## Старт проекта
 
 ### Клонируем репозиторий и переходим в папку проекта
 ```
-git clone git@bitbucket.org:imediasolutionsby/project-front-template-html.git
+git clone https://github.com/pavelfedorov2000/landing_starter.git
 ```
 
 ### Устанавливаем модули
